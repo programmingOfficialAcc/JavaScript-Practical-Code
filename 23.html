@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 23</title>
+</head>
+<body>
+    <h2>Event Handler Property</h2>
+
+    <button id="click-me-button">Click Me!</button>
+
+    <script>
+        document.getElementById('click-me-button').addEventListener('click', function(){
+            alert('Transformation Of The Button Begins!');
+
+            this.style.padding = '0.8em';
+            this.style.fontSize = '1.1em';
+            this.style.backgroundColor = '#4bb94e';
+            this.style.color = '#fff';
+            this.style.border = 'none';
+            this.style.borderRadius = '8px';
+            this.style.transition = 'all 3s';
+
+        });
+    </script>
+</body>
+</html>

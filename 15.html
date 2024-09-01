@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q. 15</title>
+	</head>
+	<body>
+		<script>
+			function showAlert() {
+				alert("This is an alert message!");
+			}
+
+			function showPrompt() {
+				const userInput = prompt("Please enter your name:");
+				if (userInput !== null) {
+					alert("Hello, " + userInput + "!");
+				} else {
+					alert("User canceled the prompt.");
+				}
+			}
+
+			function showConfirm() {
+				const userConfirmed = confirm("Do you want to proceed?");
+				if (userConfirmed) {
+					alert("You pressed OK!");
+				} else {
+					alert("You pressed Cancel.");
+				}
+			}
+
+			function openAndCloseWindow() {
+				const newWindow = window.open("", "", "width=400,height=300");
+				newWindow.document.write("<p>This is a new window created from open() and will be closed in 5 second.</p>");
+
+				setTimeout(() => {
+					newWindow.close();
+				}, 5000);
+			}
+
+			showAlert();
+			showPrompt();
+			showConfirm();
+			openAndCloseWindow();
+		</script>
+	</body>
+</html>

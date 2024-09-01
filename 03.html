@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 03</title>
+</head>
+<body>
+    <script>
+        function eachfirstLetterUpperCase(str) {
+            const words = str.split(' ');
+            for (let i = 0; i < words.length; i++){
+                words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+            }
+
+            const joinedWords = words.join(' ');
+            return joinedWords;
+        }
+
+        
+        const string = prompt('Enter a string: ');
+
+        const result = eachfirstLetterUpperCase(string);
+
+        console.log(result);
+    </script>
+</body>
+</html>

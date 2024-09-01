@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q. 21</title>
+		<style>
+			#myForm {
+				width: 300px;
+				margin: 0 auto;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				padding: 28px;
+			}
+			div {
+				font-size: 1.2em;
+				margin-bottom: 1em;
+			}
+			label {
+				display: block;
+				margin-bottom: 6px;
+			}
+			textarea,
+			input[type="password"] {
+				width: 100%;
+				padding: 8px;
+				height: 3em;
+				box-sizing: border-box;
+			}
+			button {
+				width: 100%;
+				font-size: 1.2rem;
+				padding: 12px;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				transition: box-shadow 0.2s;
+			}
+			button:hover {
+				box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align: center">Form Validation</h1>
+		<form action="#" id="myForm" name="myForm" onsubmit="return validateForm();">
+			<div>
+				<label for="username">Username</label>
+				<textarea name="username" id="username" required></textarea>
+			</div>
+
+			<div>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" required />
+			</div>
+
+			<div>
+				<label>Education</label>
+				<input type="checkbox" name="education"  value="yes" />
+				Yes
+				<input type="checkbox" name="education" value="no" /> No
+			</div>
+
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+
+		<script src="./21.js"></script>
+	</body>
+</html>

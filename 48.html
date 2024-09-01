@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 48</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .item {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Delegation Example</h2>
+    <div class="container" id="parentContainer">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+    <button id="addItemButton">Add Item</button>
+
+    <script>
+        // Parent container where the event listener is attached
+        const parentContainer = document.getElementById('parentContainer');
+        const addItemButton = document.getElementById('addItemButton');
+        let itemCount = 3;
+
+        // Event listener using event delegation
+        parentContainer.addEventListener('click', function(event) {
+            // Check if the clicked element is an item
+            if (event.target && event.target.classList.contains('item')) {
+                alert(event.target.textContent + ' was clicked!');
+            }
+        });
+
+        // Function to add a new item dynamically
+        addItemButton.addEventListener('click', function() {
+            itemCount++;
+            const newItem = document.createElement('div');
+            newItem.className = 'ite>Event Delegation Examplem';
+            newItem.textContent = 'Item ' + itemCount;
+            parentContainer.appendChild(newItem);
+        });
+    </script>
+</body>
+</html>

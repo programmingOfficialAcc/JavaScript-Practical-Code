@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 04</title>
+</head>
+<body>
+    <script>
+        function countVowelInAString(str){
+            let count = 0;
+            
+
+            for(let i = 0; i< str.length; i++){
+                if(str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u'){
+                    // console.log(i);
+                    count++;
+                }
+
+            }
+            return count;
+        }
+
+        const string = prompt('Enter a string: ').toLowerCase();
+        const result = countVowelInAString(string);
+        console.log(`Total vowels in the given string (${string}) = ${result}`);
+
+        // console.log('hello'.includes('a' || 'e'));
+    </script>
+</body>
+</html>

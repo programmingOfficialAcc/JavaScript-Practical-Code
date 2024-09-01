@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 24</title>
+</head>
+<body>
+    <script>
+        // Try-Catch-Finally
+        function divideNumbers(a, b){
+            try{
+                if (b === 0){
+                    throw new Error('Division by zero is not allowed.') ;
+                }
+                let result = a/b;
+                console.log(`Result: ${result}`);
+            }catch(error){
+                console.log(`An error occured: ${error.message}`);
+            }finally{
+                console.log("Division attempt completed.");
+            }
+        }
+
+        divideNumbers(8, 2);
+        divideNumbers(8, 0);
+
+            console.log('');
+            console.log('');
+
+
+        // --------------------------------------------------------------------------------------------------
+
+        // Try-Throw-Catch
+        function checkAge(age){
+            try{
+                if(age < 18){
+                    throw 'You must be atleast 18 years old to apply for this process.';
+                }
+                console.log('You are eligible.');
+            }catch(error){
+                console.log(`Error: ${error}`);
+            }
+        }
+
+        checkAge(22);
+        checkAge(12);
+        
+    </script>
+</body>
+</html>

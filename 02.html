@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 02</title>
+</head>
+<body>
+    <script>
+        let input = prompt('Enter a word: ');
+        
+        function reversingString(str){
+            let reversedString = '';
+            for(let i = str.length - 1; i >= 0; i--){
+                reversedString += str[i];
+            }
+            return reversedString;
+        }
+
+        function checkPalindrome(str){
+            let reverse_str = reversingString(str);
+
+            if(reverse_str === str){
+                console.log(`${str} is palindrome.`);
+            }else{
+                console.log(`${str} is not palindrome.`);
+            }
+        }
+
+        checkPalindrome(input);
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 32</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: rgb(60, 255, 0);
+        }
+        #special {
+            font-weight: bold;
+        }
+        .box {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>jQuery Selectors</h2>
+
+    <button id="showAll">Show All</button>
+    <button id="highlightEven">Highlight Even Items</button>
+    <button id="toggleClass">Toggle Class</button>
+    <button id="hideAll">Hide All</button>
+
+    <div class="box">Item 0</div>
+    <div class="box">Item 1</div>
+    <div class="box">Item 2</div>
+    <div class="box">Item 3</div>
+    <div id="special">Special Item</div>
+
+    <script>
+        $(document).ready(function() {
+            // Show all elements
+            $('#showAll').click(function() {
+                $('.box').show();  // Show all elements with class 'box'
+                $('#special').show();  // Show element with id 'special'
+            });
+            $('#hideAll').click(function() {
+                $('.box').hide();  
+                $('#special').hide();  
+            });
+
+            // Highlight even items
+            $('#highlightEven').click(function() {
+                $('.box:even').addClass('highlight');  // Add 'highlight' class to even-indexed '.box' elements
+            });
+
+            // Toggle class
+            $('#toggleClass').click(function() {
+                $('.box').toggleClass('highlight');  // Toggle 'highlight' class on all '.box' elements
+            });
+        });
+    </script>
+</body>
+</html>

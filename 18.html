@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q. 18</title>
+	</head>
+	<body>
+		<script>
+			
+			let emailRegex = new RegExp(
+				"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+				"g"
+			);
+
+			
+			let text =
+				"Please contact us at aaryanShresth05@gmail.com, 79020003@example.com, or devbyrn@website.org for more information.";
+
+			
+			let match;
+			while ((match = emailRegex.exec(text)) !== null) {
+				console.log("Found email: " + match[0] + " at index " + match.index);
+			}
+
+		
+			console.log("RegExp as a string: " + emailRegex.toString());
+		</script>
+	</body>
+</html>

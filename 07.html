@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q. 07</title>
+	</head>
+	<body>
+		<script>
+			function secondLowestGreatest(arr) {
+				var secondLowest = (arr) => arr.sort((a, b) => a - b)[1];
+
+				var secondLargest = (arr) => arr.sort((a, b) => b - a)[1];
+
+                console.log(`Second Lowest: ${secondLowest(arr)}\nSecond Largest: ${secondLargest(arr)}`);
+			}
+
+			secondLowestGreatest([1, 2, 3, 4, 5]);
+
+			
+		</script>
+	</body>
+</html>

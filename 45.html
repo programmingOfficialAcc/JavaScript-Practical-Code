@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 45</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+    <form action="#" onsubmit=" return validateForm();">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your full name...">
+        <br><br>
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob">
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email...">
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" minlength="8" placeholder="Enter your password...">
+        <br><br>
+        <label for="country">Country</label>
+        <select id="country">
+            <option value="Nepal">Nepal</option>
+            <option value="Japan">Japan</option>
+            <option value="Australia">Australia</option>
+            <option value="USA">USA</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="./45.js"></script>
+</body>
+</html>
+
+
+<!-- function validateForm(){
+    const password = document.getElementById('password').value;
+    console.log(password);
+
+    if(validatePassword(password)){
+        console.log('Password is valid.');
+    }else{
+        console.log('Password is invalid. It must include atleast one uppercase letter, one lowercase letter and one special symbol.');
+    }
+
+}
+
+function validatePassword(password){
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':\\|,.<>\/?`~]).{8,}$/;
+    return passwordPattern.test(password);
+} -->

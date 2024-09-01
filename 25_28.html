@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q. 25, 26, 27, 28 (Mix)</title>
+	</head>
+	<body>
+		<h1>Cookie Creation</h1>
+		<script>
+			// CREATE A COOKIE
+			function createCookie(name, value, days) {
+				let expiryDate = "";
+				if (days) {
+					let date = new Date();
+					date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+					expiryDate = `; expires=${date.toUTCString()}`;
+				}
+				document.cookie = `${name} = ${value || ""}${expiryDate} ; path=/`;
+			}
+			// createCookie("username", "Aaryan Shrestha", 1);
+			// createCookie("Pirate King", "Monkey D. Luffy", 2);
+			// createCookie("Archaeologist", "Nico Robin", 1);
+
+			// READ A COOKIE
+			function readCookie(name) {
+				let nameEQ = name + "=";
+				let ca = document.cookie.split(";");
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) === " ") c = c.substring(1, c.length);
+					if (c.indexOf(nameEQ) === 0)
+						return c.substring(nameEQ.length, c.length);
+				}
+				return null;
+			}
+
+			// let username = readCookie("Pirate King");
+			// console.log(username);
+
+			// CHANGE A COOKIE
+			function changeCookie(name, value, days) {
+				createCookie(name, value, days);
+			}
+
+			// changeCookie("Hokage", "Shikadai Nara", 7);
+			// changeCookie("Hokage", "Naruto Uzumaki", 7);
+
+
+			// DELETE A COOKIE
+			function deleteCookie(name) {
+				document.cookie =
+					name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			}
+
+			
+			
+			// deleteCookie("Pirate King"); 
+			
+			// deleteCookie('Hokage');
+
+		</script>
+	</body>
+</html>

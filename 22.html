@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Q. 22</title>
+		<style>
+			#clickButton,
+			#hoverBox,
+			#focusInput {
+				margin: 20px;
+				padding: 10px;
+				border-radius: 8px;
+                font-size: 18px;
+
+			}
+
+			#clickButton {
+				background-color: #4bb94e;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			#hoverBox {
+				background-color: #f0ad4e;
+				width: 150px;
+				height: 70px;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+			#focusInput {
+				padding: 8px;
+				border: 2px solid #cfcfcf;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>JavaScript Event Handling</h2>
+
+		<button id="clickButton">Click Me</button>
+
+		<div id="hoverBox">Hover Over Me</div>
+
+		<input type="text" id="focusInput" placeholder="Click to focus" />
+
+		<script>
+			document
+				.getElementById("clickButton")
+				.addEventListener("click", function () {
+					alert("Button clicked!");
+				});
+
+			document
+				.getElementById("hoverBox")
+				.addEventListener("mouseover", function () {
+					this.style.backgroundColor = "#5bc0de";
+					this.innerText = "Hovered By Aaryan Shrestha!";
+				});
+
+			document
+				.getElementById("hoverBox")
+				.addEventListener("mouseout", function () {
+					this.style.backgroundColor = "#f0ad4e";
+					this.innerText = "Back To Hover Over Me";
+				});
+
+			document
+				.getElementById("focusInput")
+				.addEventListener("focus", function () {
+					this.style.height = '200px'
+                    this.style.width = '200px';
+				});
+
+			document
+				.getElementById("focusInput")
+				.addEventListener("blur", function () {
+					this.style.height = '41px'
+                    this.style.width = '220px';
+				});
+		</script>
+	</body>
+</html>

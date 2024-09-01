@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 47</title>
+</head>
+<body>
+    <h2>AJAX Request</h2>
+    <button onclick="makeRequest()">Make AJAX Request</button>
+
+    <div id="responseOutput"></div>
+
+    <script>
+        function makeRequest() {
+            // Create an XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+
+            // Define the URL for the request
+            const url = "https://jsonplaceholder.typicode.com/users/1";
+
+            // Monitor the readyState changes
+            xhr.onreadystatechange = function() {
+                const outputDiv = document.getElementById("responseOutput");
+
+                // Handle different readyState values
+                switch (xhr.readyState) {
+                    case 0: // UNSENT
+                        outputDiv.innerHTML += "Request not initialized (UNSENT)<br>";
+                        break;
+                    case 1: // OPENED
+                        outputDiv.innerHTML += "Request has been opened (OPENED)<br>";
+                        break;
+                    case 2: // HEADERS_RECEIVED
+                        outputDiv.innerHTML += "Headers received (HEADERS_RECEIVED)<br>";
+                        break;
+                    case 3: // LOADING
+                        outputDiv.innerHTML += "Response is loading (LOADING)<br>";
+                        break;
+                    case 4: // DONE
+                        outputDiv.innerHTML += "Request completed (DONE)<br>";
+
+                        // Check the response status
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            // Successful response
+                            outputDiv.innerHTML += "Success: " + xhr.responseText + "<br>";
+                        } else {
+                            // Error handling
+                            outputDiv.innerHTML += "Error: " + xhr.status + " " + xhr.statusText + "<br>";
+                        }
+                        break;
+                }
+            };
+
+            // Initialize a GET request
+            xhr.open("GET", url, true);
+
+            // Send the request
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

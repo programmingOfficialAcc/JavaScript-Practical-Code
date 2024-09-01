@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q. 29</title>
+</head>
+<body>
+    <h2>AJAX</h2>
+    <button id="fetchDataBtn">Fetch Data</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('fetchDataBtn').addEventListener('click', function() {
+            // Create a new XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+
+            // Configure it: GET-request for the URL /data.json (you can replace this with any server URL)
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/users/1', true);
+
+            // Set up a function to handle the response data when the request is completed
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // The response is ready and successful
+                    const responseData = JSON.parse(xhr.responseText);
+                    document.getElementById('result').innerHTML = `
+                        <h3>Title: ${responseData.name}</h3>
+                        <p>${responseData.username}</p>
+                        <p>${responseData.email}</p>
+                        <p>${responseData.phone}</p>
+                        <p>${responseData.website}</p>
+
+
+                    `;
+                } else if (xhr.readyState === 4) {
+                    // The request is complete, but it failed (not status 200)
+                    document.getElementById('result').innerHTML = "Failed to load data.";
+                }
+            };
+
+            // Send the request
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
